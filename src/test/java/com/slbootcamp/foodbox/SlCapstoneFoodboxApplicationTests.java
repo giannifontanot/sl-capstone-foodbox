@@ -1,4 +1,4 @@
-package com.foodbox;
+package com.slbootcamp.foodbox;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
