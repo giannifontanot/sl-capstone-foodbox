@@ -1,5 +1,8 @@
 package com.slbootcamp.foodbox.entity;
 
+import lombok.Data;
+
+@Data
 public class Food {
     private int id;
     private String foodName;
@@ -8,5 +11,4 @@ public class Food {
     private String description;
     private String isEnabled;
     private String imageUrl;
-
 }
