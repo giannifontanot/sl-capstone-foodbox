@@ -8,6 +8,6 @@ public class User {
     private String username;
     private String password;
     private String email;
-    private Long contact;
-    private String admin;
+    private String credit;
+    private String profile;
 }

@@ -173,7 +173,7 @@ BackEnd :-
 			GET -> "/users/{id}"
 			GET -> "/users/name/{name}"
 
-		Note:- There's always room to add changes for the above..
+		Note:- There's always room to add changes for the above.
 		Ex:- Adding Searching
 				Filtering
 				Payment Option

@@ -1,9 +1,6 @@
 package com.slbootcamp.foodbox.controller;
 
-import com.slbootcamp.foodbox.entity.Box;
 import com.slbootcamp.foodbox.entity.Food;
-import com.slbootcamp.foodbox.entity.Orden;
-import com.slbootcamp.foodbox.entity.User;
 import com.slbootcamp.foodbox.jdbc.FoodDao;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,7 +35,20 @@ public class FoodController {
         return foodDao.getAllFoods();
     }
 
-    //    POST -> "/addFoodItem"(FoodItem) -> adds the food item
+
+
+    @GetMapping("/food/getFoodItem/{foodId}")
+    public Food getFoodItem(@PathVariable("foodId") int foodId) {
+
+        return foodDao.getFoodItem(foodId);
+    }
+
+    @PostMapping("/food/updateFoodItem") //-0
+    public int updateFoodItem(@RequestBody Food food){
+        logger.info("---------------> UpdateFoodItem: " + food);
+        return foodDao.updateFoodItem(food);
+    }
+
     @PostMapping("/food/addFoodItem")
     public int addFoodItem(@RequestBody Food food) {
         logger.info("---------------> food " + food);
@@ -47,15 +57,6 @@ public class FoodController {
         logger.info("---------------> " + String.valueOf(ret));
         return ret;
     }
-
-    //    PUT ->"/editFoodItem"(FoodItem) -> edits the food item and saves it back
-    @PutMapping("/food/editFoodItem")
-    public int editFoodItem(@RequestBody Food food) {
-        logger.info("---------------> food " + food);
-        int ret = foodDao.editFoodItem(food);
-        return ret;
-    }
-
     //    DELETE -> "/deleteFoodItem"(FoodItem) -> remove the food item
     @DeleteMapping("/food/deleteFoodItem")
     public int deleteFoodItem(@RequestBody Food food) {
@@ -71,6 +72,5 @@ public class FoodController {
         int ret = foodDao.toogleFoodItem(food);
         return ret;
     }
-
 
 }

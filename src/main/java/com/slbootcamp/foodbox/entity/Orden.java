@@ -6,7 +6,7 @@ import lombok.Data;
 public class Orden {
 
     private String status;
-    private Box box;
+    private Cart cart;
     private User user;
 
 }

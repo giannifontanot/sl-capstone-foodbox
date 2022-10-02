@@ -23,7 +23,8 @@ create table user
     email    varchar(255),
     password varchar(255),
     username varchar(255),
-    is_admin varchar(255),
+    profile varchar(255),
+    credit varchar(255),
     primary key (id)
 );
 
@@ -47,7 +48,7 @@ create table orden
 );
 --
 --
--- alter table orden
+-- alter table box
 --     add constraint UK_rb6npe7305gao860lxnuj2g7t unique (box_id);
 --
 --
@@ -56,6 +57,8 @@ create table orden
 --         foreign key (food_id)
 --             references food (id);
 --
+-- alter table orden
+--     add constraint UK_rb6npe7305gao860lxnuj2g7t unique (box_id);
 --
 -- alter table orden
 --     add constraint FKev4ou7yydtyartj534k0v82gx
