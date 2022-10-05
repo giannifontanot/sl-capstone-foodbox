@@ -55,8 +55,8 @@ public class FoodDao {
         return jdbcTemplate.queryForObject(SELECT_FOOD_ITEM, new FoodMapper(), foodId);
     }
 
-    public int deleteFoodItem(Food food) {
-        return jdbcTemplate.update(DELETE_FOOD_ITEM, food.getId());
+    public int deleteFoodItem(int foodId) {
+        return jdbcTemplate.update(DELETE_FOOD_ITEM, foodId);
     }
 
     public int toogleFoodItem(Food food) {

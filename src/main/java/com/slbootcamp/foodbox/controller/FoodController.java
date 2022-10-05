@@ -49,6 +49,7 @@ public class FoodController {
         return foodDao.updateFoodItem(food);
     }
 
+
     @PostMapping("/food/addFoodItem")
     public int addFoodItem(@RequestBody Food food) {
         logger.info("---------------> food " + food);
@@ -58,10 +59,10 @@ public class FoodController {
         return ret;
     }
     //    DELETE -> "/deleteFoodItem"(FoodItem) -> remove the food item
-    @DeleteMapping("/food/deleteFoodItem")
-    public int deleteFoodItem(@RequestBody Food food) {
-        logger.info("---------------> food " + food);
-        int ret = foodDao.deleteFoodItem(food);
+    @DeleteMapping("/food/deleteFoodItem/{foodId}")
+    public int deleteFoodItem(@PathVariable("foodId") int foodId) {
+        logger.info("---------------> food " + foodId);
+        int ret = foodDao.deleteFoodItem(foodId);
         return ret;
     }
 
