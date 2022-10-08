@@ -1,17 +1,17 @@
 
 
 INSERT INTO food (id, cuisine, description, image_url, is_enabled, food_name, price)values(1, 'ARAB', 'rico Kebab',
-                                                                                           'tinyurl
+                                                                                           'http://tinyurl
 .com/kebab2Image','Y', 'Kebab', 10);
 INSERT INTO food (id, cuisine, description, image_url, is_enabled, food_name, price)values(5, 'SPAIN', 'Delicious
 rice with fried shimp to perfection',
-                                                                                           'tinyurl
+                                                                                           'http://tinyurl
 .com/shrimpFriedRiceImage','Y', 'Shrimp Fried Rice', 50);
 INSERT INTO food (id, cuisine, description, image_url, is_enabled, food_name, price)values(2, 'MEXICAN', 'Borrego
 asado en horno de hoyo ',
-                                                                                           'tinyurl
+                                                                                           'http://tinyurl
 .com/barbacoaImage','Y', 'Tacos de Barbacoa', 20);
-INSERT INTO food (id, cuisine, description, image_url, is_enabled, food_name, price)values(3, 'MEXICAN', 'Receta de la abuelita de mole verde', 'tinyurl.com/moleVerdeImage','Y', 'Mole Verde', 30);
+INSERT INTO food (id, cuisine, description, image_url, is_enabled, food_name, price)values(3, 'MEXICAN', 'Receta de la abuelita de mole verde', 'http://tinyurl.com/moleVerdeImage','Y', 'Mole Verde', 30);
 
 insert into user(id,contact,email,password, profile, username, credit) values (1,"21480945441","elmerhomero@123
 .com", "sitiene","C", "yomerito", "4444-0000-0000-0001");

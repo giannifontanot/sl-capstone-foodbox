@@ -26,7 +26,7 @@ public class FoodDao {
     final String UPDATE_FOOD_ITEM = "UPDATE FOOD SET cuisine = ?, description = ?, food_name = ?, image_url = ?, " +
             "is_enabled = ?, price = ? WHERE id = ?";
 
-    final String SELECT_ALL_FOOD = "SELECT * FROM food ";
+    final String SELECT_ALL_FOOD = "SELECT * FROM food order by ID DESC";
 
     final String SELECT_FOOD_ITEM = "SELECT * FROM food WHERE food.id = ?";
 

@@ -9,7 +9,7 @@ create table food
     cuisine     varchar(255),
     description varchar(255),
     food_name   varchar(255),
-    image_url   varchar(255),
+    image_url   varchar(500),
     is_enabled  varchar(255),
     price       bigint,
     primary key (id)

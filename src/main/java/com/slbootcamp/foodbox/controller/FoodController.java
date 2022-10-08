@@ -54,7 +54,6 @@ public class FoodController {
     public int addFoodItem(@RequestBody Food food) {
         logger.info("---------------> food " + food);
         int ret = foodDao.addFoodItem(food);
-
         logger.info("---------------> " + String.valueOf(ret));
         return ret;
     }
