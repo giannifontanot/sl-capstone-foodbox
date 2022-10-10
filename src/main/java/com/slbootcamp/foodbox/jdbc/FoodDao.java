@@ -35,6 +35,7 @@ public class FoodDao {
     final String TOOGLE_FOOD_ITEM = "UPDATE FOOD SET is_enabled = ? WHERE id = ?";
 
     public List<Food> getAllFoods() {
+
         return jdbcTemplate.query(SELECT_ALL_FOOD, new BeanPropertyRowMapper<>(Food.class));
     }
 

@@ -22,13 +22,13 @@ insert into user(id,contact,email,password, profile, username, credit) values (2
 
 
 
- insert into box (id, food_id)values(1,1);
- insert into box (id, food_id)values(1,2);
- insert into box (id, food_id)values(1,3);
- insert into box (id, food_id)values(1,4);
+ insert into box (id, food_id, quantity)values(1,1,1);
+ insert into box (id, food_id, quantity)values(1,2,1);
+ insert into box (id, food_id, quantity)values(1,3,1);
+ insert into box (id, food_id, quantity)values(1,4,1);
 
- insert into box (id, food_id)values(2,1);
- insert into box (id, food_id)values(2,2);
+ insert into box (id, food_id, quantity)values(2,1,1);
+ insert into box (id, food_id, quantity)values(2,2,1);
 
 
  insert into orden(id,status,box_id,user_id)values(1,"READY", 1,1);

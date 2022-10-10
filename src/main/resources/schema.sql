@@ -33,6 +33,7 @@ create table box
 (
     id      bigint not null,
     food_id integer,
+    quantity integer,
     primary key (id, food_id)
 );
 

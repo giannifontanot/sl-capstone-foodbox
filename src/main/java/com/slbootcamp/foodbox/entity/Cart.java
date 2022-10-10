@@ -6,5 +6,4 @@ import lombok.Data;
 public class Cart {
     private Long id;
     private Food foods;
-    private Orden orden;
 }
