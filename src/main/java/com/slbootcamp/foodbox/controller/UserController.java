@@ -1,6 +1,5 @@
 package com.slbootcamp.foodbox.controller;
 
-import com.slbootcamp.foodbox.entity.Orden;
 import com.slbootcamp.foodbox.entity.User;
 import com.slbootcamp.foodbox.jdbc.UserDao;
 import org.slf4j.Logger;
@@ -21,9 +20,7 @@ public class UserController {
 
     //    POST -> "/login/
     @PostMapping("/login")
-    public String login(@RequestBody User user) {
-        String ret =  userDao.login(user);
-        logger.info(" ret --------> " + ret);
-        return ret;
+    public User login(@RequestBody User user) {
+        return userDao.login(user);
     }
 }

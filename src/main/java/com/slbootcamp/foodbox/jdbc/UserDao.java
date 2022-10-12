@@ -6,7 +6,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 @Repository
 public class UserDao {
@@ -15,20 +19,25 @@ public class UserDao {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    private final String SELECT_USER = "SELECT PROFILE FROM User WHERE username=? AND password=? ";
+    private final String SELECT_USER = "SELECT * FROM User WHERE username=? AND password=? ";
 
-    public String login(User user) {
-        String ret = "F";
-        try {
-            logger.info(SELECT_USER);
-            logger.info(SELECT_USER+ " " + user.getUsername());
-            logger.info(SELECT_USER+ " " + user.getUsername() + " " + user.getPassword());
-            ret = jdbcTemplate.queryForObject(SELECT_USER, String.class, user.getUsername(), user.getPassword());
-        } catch (EmptyResultDataAccessException e) {
+    public User login(User user) {
+            return jdbcTemplate.queryForObject(SELECT_USER, new UserMapper(), user.getUsername(), user.getPassword());
 
-            logger.warn("User not found: " + user.getUsername());
-            return ret;
+    }
+
+    public static final class UserMapper implements RowMapper<User>{
+        public User mapRow(ResultSet rs, int rowNum) throws SQLException {
+            User user = new User();
+            user.setId(rs.getLong("id"));
+            user.setUsername(rs.getString("username"));
+            user.setName(rs.getString("name"));
+            user.setPassword(rs.getString("password"));
+            user.setProfile(rs.getString("profile"));
+            user.setContact(rs.getString("contact"));
+            user.setCredit(rs.getString("credit"));
+
+            return user;
         }
-        return ret;
     }
 }

@@ -22,6 +22,7 @@ create table user
     contact  varchar(255),
     email    varchar(255),
     password varchar(255),
+    name varchar(255),
     username varchar(255),
     profile varchar(255),
     credit varchar(255),
