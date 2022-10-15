@@ -6,13 +6,9 @@ import com.slbootcamp.foodbox.entity.Orden;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.configurationprocessor.json.JSONObject;
-import org.springframework.boot.json.JsonParserFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -24,24 +20,45 @@ public class OrdenDao {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    final String INSERT_FOOD_ITEM = "INSERT INTO BOX (FOOD_ID) VALUES (?)";
+    final String INSERT_FOOD_ITEM = "INSERT INTO BOX (ID, FOOD_ID, QUANTITY) VALUES (?,?,?)";
+    final String INSERT_ORDEN = "INSERT INTO ORDEN (BOX_ID, USER_ID, STATUS) VALUES (?,?,'PENDING')";
 
     final String SELECT_ORDEN = "SELECT user.username, orden.id, food.food_name, food.price, orden.status " +
-    " FROM food, user, box, orden " +
-    " WHERE orden.box_id = box.id " +
-    " AND orden.user_id = user.id " +
-    " AND box.food_id = food.id " +
-    " AND user.id = ? " +
-    " ORDER BY orden.id DESC";
+            " FROM food, user, box, orden " +
+            " WHERE orden.box_id = box.id " +
+            " AND orden.user_id = user.id " +
+            " AND box.food_id = food.id " +
+            " AND user.id = ? " +
+            " ORDER BY orden.id DESC";
+    final String UPDATE_CLIENT = "UPDATE USER SET NAME = ?, CONTACT=?, CREDIT = ? WHERE ID = ? ";
 
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     public List<DisplayOrden> getDisplayOrden(int ordenId) {
-        logger.info("getOrden");
+//        logger.info("getOrden");
         return jdbcTemplate.query(SELECT_ORDEN, new OrdenDao.DisplayOrdenMapper(), ordenId);
     }
 
+    public int saveOrden(Orden orden) {
+        String pkBox = generatePK();
+        //Save cart items
+
+        List<Food> cart = orden.getCart();
+        cart.forEach(food -> {
+            jdbcTemplate.update(INSERT_FOOD_ITEM, pkBox, food.getId() , 1);
+        });
+
+
+        //save orden using user_Id and status="PENDING"
+        jdbcTemplate.update(INSERT_ORDEN, pkBox, orden.getUser().getId());
+        jdbcTemplate.update(UPDATE_CLIENT, orden.getUser().getName(), orden.getUser().getContact(), orden.getUser().getCredit(), orden.getUser().getId());
+        return 1;
+    }
+
+    private static String generatePK(){
+        return String.valueOf(System.currentTimeMillis());
+    }
 
     private static final class DisplayOrdenMapper implements RowMapper<DisplayOrden> {
         public DisplayOrden mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -54,5 +71,6 @@ public class OrdenDao {
             return displayOrden;
         }
     }
+
 
 }

@@ -21,14 +21,14 @@ public class OrdenController {
     @Autowired
     OrdenDao ordenDao;
 
-    @PostMapping("/cart/placeOrden")
+    @PostMapping("/cart/postPurchase")
     public int placeOrden(@RequestBody Orden orden) {
 //    public int placeOrden(@ModelAttribute Orden orden) {
-        logger.info("---------------> /cart/placeOrden: ");
-        logger.info("---------------> Orden: " + orden);
+//        logger.info("---------------> /cart/postPurchase: ");
+//        logger.info("---------------> Orden: " + orden);
 
 
-        return 1;
+        return ordenDao.saveOrden(orden);
 //        int ret =  ordenDao.placeOrden(orden);
 //        logger.info(" ret --------> " + ret);
 //        return ret;

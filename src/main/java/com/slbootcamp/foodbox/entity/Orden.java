@@ -2,11 +2,13 @@ package com.slbootcamp.foodbox.entity;
 
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 public class Orden {
 
     private String status;
-    private int cart_id;
-    private int user_id;
+    private List<Food> cart;
+    private User user;
 
 }
