@@ -25,7 +25,7 @@ public class OrdenController {
     public int placeOrden(@RequestBody Orden orden) {
 //    public int placeOrden(@ModelAttribute Orden orden) {
 //        logger.info("---------------> /cart/postPurchase: ");
-//        logger.info("---------------> Orden: " + orden);
+      logger.info("----- --- ---- ---> Orden: " + orden);
 
 
         return ordenDao.saveOrden(orden);

@@ -32,5 +32,5 @@ insert into user(id,contact,email,password, profile, username, credit, name) val
 
 
  insert into orden(id,status,box_id,user_id)values(1,"READY", 1,1);
- insert into orden(id,status,box_id,user_id)values(2,"PEND", 2,1);
-insert into orden(id,status,box_id,user_id)values(3,"PEND", 2,3);
+ insert into orden(id,status,box_id,user_id)values(2,"PENDING", 2,1);
+insert into orden(id,status,box_id,user_id)values(3,"PENDING", 2,3);
