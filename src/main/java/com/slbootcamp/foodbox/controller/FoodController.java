@@ -72,5 +72,4 @@ public class FoodController {
         int ret = foodDao.toogleFoodItem(food);
         return ret;
     }
-
 }

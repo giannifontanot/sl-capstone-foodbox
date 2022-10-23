@@ -19,11 +19,11 @@ public class FoodDao {
     JdbcTemplate jdbcTemplate;
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
-    final String INSERT_FOOD_ITEM = "INSERT INTO FOOD " +
-            " (CUISINE, DESCRIPTION, FOOD_NAME, IMAGE_URL, IS_ENABLED, PRICE)" +
+    final String INSERT_FOOD_ITEM = "INSERT INTO food " +
+            " (CUISINE, DESCRIPTION, food_NAME, IMAGE_URL, IS_ENABLED, PRICE)" +
             " VALUES (?,?,?,?,?,?)";
 
-    final String UPDATE_FOOD_ITEM = "UPDATE FOOD SET cuisine = ?, description = ?, food_name = ?, image_url = ?, " +
+    final String UPDATE_FOOD_ITEM = "UPDATE food SET cuisine = ?, description = ?, food_name = ?, image_url = ?, " +
             "is_enabled = ?, price = ? WHERE id = ?";
 
     final String SELECT_ALL_FOOD = "SELECT * FROM food order by ID DESC";
@@ -32,7 +32,7 @@ public class FoodDao {
 
     final String DELETE_FOOD_ITEM = "DELETE FROM food WHERE id = ?";
 
-    final String TOOGLE_FOOD_ITEM = "UPDATE FOOD SET is_enabled = ? WHERE id = ?";
+    final String TOOGLE_FOOD_ITEM = "UPDATE food SET is_enabled = ? WHERE id = ?";
 
     public List<Food> getAllFoods() {
 

@@ -19,7 +19,7 @@ public class UserDao {
 
     private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    private final String SELECT_USER = "SELECT * FROM User WHERE username=? AND password=? ";
+    private final String SELECT_USER = "SELECT * FROM user WHERE username=? AND password=? ";
 
     public User login(User user) {
             return jdbcTemplate.queryForObject(SELECT_USER, new UserMapper(), user.getUsername(), user.getPassword());

@@ -105,7 +105,7 @@ values(49, 'MEXICAN', 'A combination of poblano, cubanelle and jalapeno peppers.
 INSERT INTO food (id, cuisine, description, image_url, is_enabled, food_name, price)
 values(19, 'MEXICAN', 'The best way to make tacos for a crowd is to make tacos de canasta.','https://tinyurl.com/tacosCanastaImage','Y', 'Tacos de Canasta (Basket Tacos for a Party or Potluck)', 10);
 INSERT INTO food (id, cuisine, description, image_url, is_enabled, food_name, price)
-values(55, 'MEXICAN', 'Chorizo Tacos combined with garlic, cumin, some warm spices, oregano, and vinega','https://tinyurl.com/chorizoTacosImage',       'Y', 'Mexican Chorizo Tacos', 10);
+values(55, 'MEXICAN', 'Chorizo Tacos combined with garlic, cumin, some warm spices, oregano','https://tinyurl.com/chorizoTacosImage',       'Y', 'Mexican Chorizo Tacos', 10);
 INSERT INTO food (id, cuisine, description, image_url, is_enabled, food_name, price)
 values(37, 'MEXICAN', 'Slow braised pork, shredded and then crisped up before serving.','https://tinyurl.com/shreddedPorkImage','Y', 'Shredded Pork in Ancho-Orange Sauce', 10);
 INSERT INTO food (id, cuisine, description, image_url, is_enabled, food_name, price)
@@ -114,10 +114,8 @@ INSERT INTO food (id, cuisine, description, image_url, is_enabled, food_name, pr
 values(4, 'MEXICAN', 'Grilled skirt steak, well salted, and deeply browned on the edges, with beefy brawn shining through underneath',       'https://tinyurl.com/carneAsadaTortaImage','Y', 'Carne Asada Torta', 10);
 
 
-insert into user(id,contact,email,password, profile, username, credit, name) values (1,"(214) 000-0001","hungrymike@gmail.com", "user123", "C",
-                                                                                     "mike", "", "Mike Rice");
-insert into user(id,contact,email,password, profile, username, credit, name) values (2,"(214) 000-0002","admin@foodbox.com", "admin123","A", "admin",
-                                                                                     "", "I am the Admin");
+insert into user(id,contact,email,password, profile, username, credit, name) values (1,"(214) 000-0001","hungrymike@gmail.com", "chicago2022", "C",  "mike", "", "Mike Rice");
+insert into user(id,contact,email,password, profile, username, credit, name) values (2,"(214) 000-0002","admin@foodbox.com", "chicago2022","A", "admin", "", "Jazmine the Admin");
 
 
  insert into box (id, food_id, quantity)values(1,1,1);

@@ -23,8 +23,8 @@ public class OrdenDao {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    String INSERT_FOOD_ITEM = "INSERT INTO BOX (ID, FOOD_ID, QUANTITY) VALUES (?,?,?)";
-    final String INSERT_ORDEN = "INSERT INTO ORDEN (BOX_ID, USER_ID, STATUS) VALUES (?,?,'PENDING')";
+    String INSERT_FOOD_ITEM = "INSERT INTO box (ID, FOOD_ID, QUANTITY) VALUES (?,?,?)";
+    final String INSERT_ORDEN = "INSERT INTO orden (BOX_ID, USER_ID, STATUS) VALUES (?,?,'PENDING')";
 
     final String SELECT_ORDEN = "SELECT user.username, orden.id, CONCAT(food.food_name, \" (\",box.quantity,\")\") as food_name, food.price, orden.status " +
             " FROM food, user, box, orden " +
@@ -34,7 +34,7 @@ public class OrdenDao {
             " AND user.id = ? " +
             " ORDER BY orden.id DESC";
 
-    final String UPDATE_CLIENT = "UPDATE USER SET NAME = ?, CONTACT=?, CREDIT = ? WHERE ID = ? ";
+    final String UPDATE_CLIENT = "UPDATE user SET NAME = ?, CONTACT=?, CREDIT = ? WHERE ID = ? ";
 
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
