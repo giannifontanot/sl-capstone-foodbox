@@ -85,7 +85,7 @@ values(9, 'CARIBEAN', 'Spicy Jamaican chicken curry.','https://tinyurl.com/chick
 INSERT INTO food (id, cuisine, description, image_url, is_enabled, food_name, price)
 values(31, 'CARIBEAN', 'When you combine tacos and Jamaican beef patties, something magical happens.','https://tinyurl.com/jamaicanBeefTacosImage',       'Y', 'Jamaican Beef Tacos With Tropical Slaw', 10);
 INSERT INTO food (id, cuisine, description, image_url, is_enabled, food_name, price)
-values(51, 'CARIBEAN', 'Jerk chicken has it all: sweetness, spice and come-hither appeal.','https://tinyurl.com/chickenRummyImage','Y', 'Hellfire Jerk Chicken With Rummy Grilled Pineapple', 10);
+values(51, 'CARIBEAN', 'Jerk chicken has it all: sweetness, spice and come-hither appeal.','https://tinyurl.com/chickenRummyImage','N', 'Hellfire Jerk Chicken With Rummy Grilled Pineapple', 10);
 INSERT INTO food (id, cuisine, description, image_url, is_enabled, food_name, price)
 values(20, 'CARIBEAN', 'Curry-laced dough is filled with a heady, spicy beef mixture and baked in the oven until golden brown.','https://tinyurl.com/jamaicanPattiesImage','Y', 'Curried Jamaican Beef Patties', 10);
 INSERT INTO food (id, cuisine, description, image_url, is_enabled, food_name, price)
@@ -94,7 +94,7 @@ values(47, 'CARIBEAN', 'Onions, peppers, garlic, and fresh herbs are combined in
 INSERT INTO food (id, cuisine, description, image_url, is_enabled, food_name, price)
 values(22, 'MEXICAN', 'Beef chuck and also oxtails, and then layers in even more flavor with multiple chilies and a splash of fish sauce.',              'https://tinyurl.com/beefiestBarbacoaImage','Y', 'Beefiest Barbacoa', 10);
 INSERT INTO food (id, cuisine, description, image_url, is_enabled, food_name, price)
-values(48, 'MEXICAN', 'Traditional carnitas are made by slowly cooking pork in a pool of lard.','https://tinyurl.com/carnitasImage','Y', 'Killer Carnitas', 10);
+values(48, 'MEXICAN', 'Traditional carnitas are made by slowly cooking pork in a pool of lard.','https://tinyurl.com/carnitasImage','N', 'Killer Carnitas', 10);
 INSERT INTO food (id, cuisine, description, image_url, is_enabled, food_name, price)
 values(38, 'MEXICAN', 'Mexican-style chile verde made with Hatch chilies','https://tinyurl.com/chileVerdeImage','Y', 'Chile Verde Virtuosity', 10);
 INSERT INTO food (id, cuisine, description, image_url, is_enabled, food_name, price)
@@ -105,7 +105,7 @@ values(49, 'MEXICAN', 'A combination of poblano, cubanelle and jalapeno peppers.
 INSERT INTO food (id, cuisine, description, image_url, is_enabled, food_name, price)
 values(19, 'MEXICAN', 'The best way to make tacos for a crowd is to make tacos de canasta.','https://tinyurl.com/tacosCanastaImage','Y', 'Tacos de Canasta (Basket Tacos for a Party or Potluck)', 10);
 INSERT INTO food (id, cuisine, description, image_url, is_enabled, food_name, price)
-values(55, 'MEXICAN', 'Chorizo Tacos combined with garlic, cumin, some warm spices, oregano','https://tinyurl.com/chorizoTacosImage',       'Y', 'Mexican Chorizo Tacos', 10);
+values(55, 'MEXICAN', 'Chorizo Tacos combined with garlic, cumin, some warm spices, oregano','https://tinyurl.com/chorizoTacosImage', 'N', 'Mexican Chorizo Tacos', 10);
 INSERT INTO food (id, cuisine, description, image_url, is_enabled, food_name, price)
 values(37, 'MEXICAN', 'Slow braised pork, shredded and then crisped up before serving.','https://tinyurl.com/shreddedPorkImage','Y', 'Shredded Pork in Ancho-Orange Sauce', 10);
 INSERT INTO food (id, cuisine, description, image_url, is_enabled, food_name, price)
