@@ -22,7 +22,9 @@ public class UserDao {
     private final String SELECT_USER = "SELECT * FROM user WHERE username=? AND password=? ";
 
     public User login(User user) {
-            return jdbcTemplate.queryForObject(SELECT_USER, new UserMapper(), user.getUsername(), user.getPassword());
+        logger.info("Login user: " + user.getUsername() );
+        logger.info("Login pwd: " + user.getPassword());
+return jdbcTemplate.queryForObject(SELECT_USER, new UserMapper(), user.getUsername(), user.getPassword());
 
     }
 

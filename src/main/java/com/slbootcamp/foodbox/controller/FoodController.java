@@ -35,8 +35,6 @@ public class FoodController {
         return foodDao.getAllFoods();
     }
 
-
-
     @GetMapping("/food/getFoodItem/{foodId}")
     public Food getFoodItem(@PathVariable("foodId") int foodId) {
 

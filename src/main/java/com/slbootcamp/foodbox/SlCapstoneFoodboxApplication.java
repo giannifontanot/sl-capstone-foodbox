@@ -20,7 +20,6 @@ public class SlCapstoneFoodboxApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        logger.info(" - FindAll() ---> {}","x");
-        logger.info(" - FindAll() ---> {}", foodDao.getAllFoods());
+
     }
 }
